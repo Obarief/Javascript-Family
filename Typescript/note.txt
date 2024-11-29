@@ -1,0 +1,206 @@
+typescript adalah superset dari javascript
+typescript merupakan strongly type language
+
+javascript = dynamic language
+typescript = static language
+
+typescript lebih strict artinya setiap variabel harus dilakukan inisialisasi tipe datanya, walaupun menulis kode javascript masih tetap bisa" saja
+
+============
+
+***SETUP :
+nodejs
+babel = transpile untuk compile js/ts ke versi lama agar bisa kompatibel di lingkungan
+jest = testing (menjalankan kode, tes logika)
+typescript = dengan integrasinya
+
+============
+
+command :
+npx tsc = compile typescript
+npm test = custom (unit test babel dan jest)
+npm tsc --watch = live error warning
+npx jest = menjankan unit testing jest sendiri 
+
+============
+
+pada penggunaannya sama namun hanya lebih strict dalam pembuatan sebuah variabel
+
+============
+
+penggunaan babel dengan typescript = harus gunakan juga npx tsc = untuk mengompilenya karena kalau hanya dilakukan unit test menggunakan babel atau jest dengan npm test = maka akan terjadi success padahal ada kesalahan ketika dilakukan kompilasi menggunakan compiler bawaan typescript
+
+============
+
+cara kerja babel = yaitu menghapus kodingan typescript lalu akan dibuatkan menjadi javascript = sehingga tidak terlihat bagian mana yang error dari typescript
+
+============
+
+penggunaan npx tsc --watch = untuk mengoreksi secara langsung 
+
+============
+
+*penggunaan jest sebagai unit test = pemakaian "describe" dan "it"
+*jika tidak melakukan pengujian otomatis menggunakan jest atau library serupa maka tidak perlu memakai "describe" dan "it"
+
+============
+
+describe = untuk sebagai judul dari bab yang diuji dari kumpulan test case
+it - untuk melakukan pengujian tunggal apakah suatu fungsi mengembalikan nilai yang benar
+expect .toBe = untuk melakukan ekspektasi output yang diigninkan
+
+============
+
+
+*describe = { 
+    describe('Array', function () {
+  // Semua pengujian terkait array diletakkan di sini
+});
+
+}
+
+*it = {
+    it('should must declare', function () {
+  let nama: string[] = ['okta', 'ucup', 'otong'];
+  expect(nama.length).toBe(3); // Verifikasi nama memiliki 3 elemen
+});
+
+}
+
+*expect .toBe{
+    ...
+    return value.toUpperCase()
+    expect(process('okta)).toBe('OKTA')
+}
+
+============
+
+tuple = sama seperti array namun jumlahnya sudah ditentukan
+
+============
+
+alias untuk penggunaan yang tidak diketahui outputnya dengan tipe data apa
+
+*penggunaan =
+
+type Category = {
+    id: string,
+    name: string
+}
+
+type product = {
+    id: string
+    name: string
+    price: number
+    category: Category
+}
+
+
+============
+
+
+optional properties
+
+tambahkan tanda tanya sebelum deklarasi tipe data
+
+*contoh = 
+
+description?: string
+
+============
+
+enum
+
+tipe data yang pasti dalam ts namun tidak ada dalam js = ketika di kompilasi ke js maka akan menjadi string atau number
+
+============
+
+lebih banyak menggunakan interface daripada type
+
+interface itu sama seperti object dalam js
+
+interface = deklarasi data selain alias, namun dapat dikembangkan lebih mudah
+*para senior ketika membuat tipe data yang kompleks akan menggunakan interface
+
+readonly pada properties
+
+============
+
+this = membicarakan dirinya sendiri (mengacu pada pemilik objeknya)
+
+============
+
+type assertions = ketika kita mengetahui tipe datanya namun ts tidak mengetahuinya maka mengambil dari js, namun akan menjadi tipe data any, maka bisa gunakan as (assertions)
+
+export interface Person {
+  name: string,
+  sayHello(name : string): string
+}
+
+const person: any {
+  id: 1,
+  name: 'ucup'
+}
+
+const person2: Person = person as Person
+
+
+typescript = membaca tipe data any dengan tidak memeriksa isinya
+person = adalah objek asli tanpa batasan
+
+jika person2.sayHello('okta') // error di runtime namun bisa di kompilasi
+
+
+?contoh sederhana{
+
+let angka: any = 123
+
+angka: number
+
+} 
+
+%&%#@*^(@%*@&%(#@%!)(%*#$&#!*%(#!%)))
+
+Type assertion (as) hanya memberi tahu 
+TypeScript tentang bagaimana Anda ingin 
+memperlakukan objek, bukan untuk mengubah 
+data tersebut secara fisik.
+
+Person tidak ada age: number
+person ada age: 1
+
+maka age akan menyebabkan error
+
+*person harus berdasarkan Person
+*Person pada person2 digunakan untuk menegaskan untuk dimasa depan
+
+%&%#@*^(@%*@&%(#@%!)(%*#$&#!*%(#!%)))
+
+
+============
+
+null = nilai yang kosong bukan angka 0 (tidak ada wadah dan isi)
+undefined = nilai yang belum ditentukan (ada wadah namun tidak ada isi)
+void = tidak mengembalikan nilai apapun
+return = mengembalikan nilai dan dapat digunakan 
+console.log = mengeluarkan kembalian pada konsol
+
+============
+
+function overloading = penggunaan function yang sama namun keluarannya dapat disesuaikan
+
+function callMe(nama: string): string
+        function callMe(nama: number): number
+        function callMe(nama: any){
+            if(typeof nama === 'string'){
+                return nama
+            }else if(typeof nama === 'number'){
+                return nama
+            }
+            }
+
+============
+
+-semua fitur js bisa semua di ts
+-ts hanya harus jelas tipe datanya 
+-penggunaan any tidak direkomendasikan

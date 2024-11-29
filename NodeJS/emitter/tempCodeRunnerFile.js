@@ -1,0 +1,1 @@
+emitter.removeListener('rain', useUmbrella);
