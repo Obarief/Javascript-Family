@@ -1,6 +1,8 @@
 dipelajari dari channel youtube 
 
-special thanks to:
+special thanks to: ❤
+
+-Dicoding Indonesia = Javascript BackEnd
 
 -Programmer Zaman Now = https://www.youtube.com/watch?v=C_C64faSO4c&list=PL-CtdCApEFH9jIdygiF4vTIs4Xpo_cHhC
 
